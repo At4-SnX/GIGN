@@ -13,17 +13,37 @@ module.exports = {
   // --- Salons (clic droit sur le salon > Copier l'ID) ----------------------
   ARRIVAL_CHANNEL_ID: process.env.ARRIVAL_CHANNEL_ID,     // salon des arrivées
   DEPARTURE_CHANNEL_ID: process.env.DEPARTURE_CHANNEL_ID, // salon des départs
-  STREAM_CHANNEL_ID: process.env.STREAM_CHANNEL_ID,       // salon où le message TTS de stream est envoyé
 
-  // --- Statut du bot --------------------------------------------------------
-  // Le bot se connecte en "Inactif" (petite pastille orange = "en attente / support")
-  PRESENCE_STATUS: 'idle', // 'online' | 'idle' | 'dnd' | 'invisible'
-  STATUS_TEXT: '🔗discord.gg/bordeauxrp',
+  // Salon vocal dans lequel le bot reste connecté en permanence
+  // (clic droit sur le salon VOCAL > Copier l'ID)
+  SUPPORT_VOICE_CHANNEL_ID: process.env.SUPPORT_VOICE_CHANNEL_ID,
+
+  // --- Statut du bot ----------------------------------------------------------
+  // Le bot se connecte en ligne, avec une activité de type "En direct" (Streaming).
+  PRESENCE_STATUS: 'online', // 'online' | 'idle' | 'dnd' | 'invisible'
+  STATUS_TEXT: '🔗discord.gg/bordeauxrp', // texte affiché à côté du statut "En direct"
+  // ⚠️ Limitation propre à Discord : le badge violet "En direct" (Streaming) ne
+  // s'affiche vraiment que si cette URL pointe vers twitch.tv ou youtube.com.
+  // Avec un autre lien (comme un lien d'invitation Discord), Discord peut
+  // retomber sur un statut classique "Joue à ...". Mets ici un vrai lien
+  // Twitch/YouTube si tu veux garantir le badge "En direct".
+  STREAM_URL: process.env.STREAM_URL || 'https://discord.gg/bordeauxrp',
+
+  // --- Image utilisée pour les arrivées ET les départs ------------------------
+  GIGN_IMAGE_PATH: './assets/arrivee-gign.png',
 
   // --- Message d'arrivée (Components V2) -------------------------------------
-  ARRIVAL_IMAGE_PATH: './assets/arrivee-gign.png', // image envoyée à chaque arrivée
   ARRIVAL_TITLE: '🪖 Nouvelle recrue — GIGN',
-  ARRIVAL_MESSAGE: 'Bienvenue {user} au sein du **GIGN** !\nMerci de suivre la procédure d\'intégration en attendant votre prise en charge.',
+  ARRIVAL_MESSAGE:
+    'Bienvenue au sein du **Groupe d\'Intervention de la Gendarmerie Nationale**, {user}.\n\n' +
+    'Votre arrivée vient d\'être enregistrée par nos services. Le GIGN est une unité d\'élite exigeante : ' +
+    'la discipline, la rigueur et l\'esprit de corps en sont les fondements. Chaque nouvelle recrue est ' +
+    'accueillie avec la même attention et devra en retour se montrer digne des valeurs de l\'unité.\n\n' +
+    '**Avant votre prise de fonction, merci de :**\n' +
+    '- Prendre connaissance du règlement intérieur du serveur ;\n' +
+    '- Vous présenter dans le salon prévu à cet effet ;\n' +
+    '- Patienter dans le salon vocal d\'attente : un gradé viendra procéder à votre intégration dans les meilleurs délais.\n\n' +
+    'Soyez fier de rejoindre nos rangs. **Honneur et Patrie.**',
   ARRIVAL_COLOR: '#0b2545', // bleu GIGN (couleur d'accent du Container)
   ARRIVAL_FOOTER: 'Gendarmerie Nationale — GIGN RP',
 
@@ -34,17 +54,16 @@ module.exports = {
   HELLO_DM_MESSAGE:
     '👋 **{clicker}** vous a dit bonjour sur **{guild}** !\nN\'hésitez pas à aller lui répondre pour faire connaissance 😊',
 
-  // --- Message de départ -------------------------------------------------
+  // --- Message de départ (Components V2) --------------------------------------
   DEPARTURE_TITLE: '📤 Départ — GIGN',
-  DEPARTURE_MESSAGE: '{user} a quitté le serveur.',
+  DEPARTURE_MESSAGE:
+    '**{user}** a quitté nos rangs.\n\n' +
+    'Conformément au protocole administratif en vigueur, son dossier a été clôturé et l\'ensemble de ses ' +
+    'accréditations révoquées avec effet immédiat. L\'accès aux ressources internes de l\'unité lui est ' +
+    'désormais retiré.\n\n' +
+    'Nous saluons les services rendus au sein du GIGN durant sa présence parmi nous et lui souhaitons ' +
+    'bonne continuation dans ses projets futurs.\n\n' +
+    '*Que l\'honneur du GIGN continue de guider ceux qui restent.*',
   DEPARTURE_COLOR: '#8b0000',
   DEPARTURE_FOOTER: 'Gendarmerie Nationale — GIGN RP',
-
-  // --- TTS Stream (annonce vocale quand un membre passe en direct) --------
-  // {user} est remplacé automatiquement par le pseudo du membre
-  DEFAULT_TTS_MESSAGE: '{user} est en direct sur Bordeaux RP, venez le soutenir !',
-
-  // Rôle autorisé à changer le message TTS avec la commande /tts-message
-  // (laisser vide "" pour n'autoriser que les administrateurs du serveur)
-  TTS_ADMIN_ROLE_ID: process.env.TTS_ADMIN_ROLE_ID || '',
 };
