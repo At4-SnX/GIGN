@@ -8,7 +8,7 @@ Bot Discord.js v14 prêt à déployer sur **Railway**.
   - Quand quelqu'un clique sur ce bouton, la nouvelle recrue reçoit un **MP** : *"{clicker} vous a dit bonjour sur {guild} !"*.
 - **Départ** : même mise en forme (Components V2), même image, texte long et sérieux, dans le salon des départs.
 - **Vocal support permanent** : le bot rejoint un salon vocal dédié ("attente support") au démarrage et **reste connecté en permanence** — il se reconnecte tout seul en cas de coupure ou de déconnexion.
-- **Annonce TTS** : à chaque connexion, le bot envoie un message **TTS** (lu à voix haute) dans un salon texte dédié, pour signaler que le support est en ligne. Texte modifiable dans `config.js` → `TTS_MESSAGE`.
+- **Annonce TTS** : quand un membre rejoint le salon vocal support, le bot envoie un message **TTS** (lu à voix haute) dans un salon texte dédié. Texte modifiable dans `config.js` → `TTS_MESSAGE` (utilise `{user}`).
 - **Statut "En direct"** : le bot affiche une activité de type **Streaming** avec comme texte `🔗discord.gg/bordeauxrp`.
   - ⚠️ **Limitation Discord** : le badge violet "En direct" ne s'affiche vraiment que si le lien associé pointe vers **twitch.tv** ou **youtube.com**. Avec un lien `discord.gg`, Discord peut retomber sur un statut classique. Renseigne un vrai lien Twitch/YouTube dans `STREAM_URL` (`.env`) si tu veux garantir l'affichage du badge — le texte affiché (`STATUS_TEXT`) reste `🔗discord.gg/bordeauxrp` dans tous les cas.
 

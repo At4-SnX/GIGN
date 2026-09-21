@@ -23,7 +23,8 @@ module.exports = {
   TTS_CHANNEL_ID: process.env.TTS_CHANNEL_ID,
   // Message envoyé avec le flag "TTS" (lu à voix haute pour les membres qui ont
   // l'option "Autoriser la lecture des messages TTS" activée dans ce salon)
-  TTS_MESSAGE: 'Le support est désormais en ligne et disponible sur le salon vocal d\'attente. N\'hésitez pas à nous rejoindre.',
+  // {user} = pseudo du membre qui vient de rejoindre le vocal support
+  TTS_MESSAGE: '{user} vient de rejoindre le salon d\'attente support. Un membre du staff va le prendre en charge.',
 
   // --- Statut du bot ----------------------------------------------------------
   // Le bot se connecte en ligne, avec une activité de type "En direct" (Streaming).

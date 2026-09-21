@@ -107,29 +107,33 @@ client.once('ready', async () => {
   const guild = client.guilds.cache.get(config.GUILD_ID);
   if (guild) {
     await connectToSupportVoiceChannel(guild);
-    await sendTtsAnnouncement(guild);
   } else {
     console.warn('⚠️ GUILD_ID introuvable dans le cache : le bot ne rejoint aucun vocal pour l\'instant.');
   }
 });
 
 // ----------------------------------------------------------------------------
-// Message TTS envoyé une fois, dans un salon texte, quand le bot se connecte
+// Message TTS envoyé dans un salon texte quand un membre rejoint le vocal support
 // ----------------------------------------------------------------------------
-async function sendTtsAnnouncement(guild) {
-  if (!config.TTS_CHANNEL_ID) {
-    return console.warn('⚠️ TTS_CHANNEL_ID non défini : aucune annonce TTS envoyée.');
-  }
-
+client.on('voiceStateUpdate', async (oldState, newState) => {
   try {
-    const channel = guild.channels.cache.get(config.TTS_CHANNEL_ID);
+    if (newState.member?.user?.bot) return; // on ignore les bots (dont nous-même)
+    if (newState.channelId !== config.SUPPORT_VOICE_CHANNEL_ID) return; // pas le salon support
+    if (oldState.channelId === config.SUPPORT_VOICE_CHANNEL_ID) return; // déjà dedans (juste mute/deaf par ex.)
+
+    if (!config.TTS_CHANNEL_ID) {
+      return console.warn('⚠️ TTS_CHANNEL_ID non défini : aucune annonce TTS envoyée.');
+    }
+
+    const channel = newState.guild.channels.cache.get(config.TTS_CHANNEL_ID);
     if (!channel) return console.warn('⚠️ Salon TTS introuvable, vérifie TTS_CHANNEL_ID.');
 
-    await channel.send({ content: config.TTS_MESSAGE, tts: true });
+    const text = config.TTS_MESSAGE.replace('{user}', newState.member.displayName);
+    await channel.send({ content: text, tts: true });
   } catch (err) {
-    console.error('Erreur lors de l\'envoi de l\'annonce TTS :', err);
+    console.error('Erreur lors de l\'annonce TTS (arrivée en vocal) :', err);
   }
-}
+});
 
 // ----------------------------------------------------------------------------
 // Construit le "Container" Components V2 commun à l'arrivée et au départ
