@@ -107,10 +107,29 @@ client.once('ready', async () => {
   const guild = client.guilds.cache.get(config.GUILD_ID);
   if (guild) {
     await connectToSupportVoiceChannel(guild);
+    await sendTtsAnnouncement(guild);
   } else {
     console.warn('⚠️ GUILD_ID introuvable dans le cache : le bot ne rejoint aucun vocal pour l\'instant.');
   }
 });
+
+// ----------------------------------------------------------------------------
+// Message TTS envoyé une fois, dans un salon texte, quand le bot se connecte
+// ----------------------------------------------------------------------------
+async function sendTtsAnnouncement(guild) {
+  if (!config.TTS_CHANNEL_ID) {
+    return console.warn('⚠️ TTS_CHANNEL_ID non défini : aucune annonce TTS envoyée.');
+  }
+
+  try {
+    const channel = guild.channels.cache.get(config.TTS_CHANNEL_ID);
+    if (!channel) return console.warn('⚠️ Salon TTS introuvable, vérifie TTS_CHANNEL_ID.');
+
+    await channel.send({ content: config.TTS_MESSAGE, tts: true });
+  } catch (err) {
+    console.error('Erreur lors de l\'envoi de l\'annonce TTS :', err);
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Construit le "Container" Components V2 commun à l'arrivée et au départ

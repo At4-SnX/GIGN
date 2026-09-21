@@ -8,6 +8,7 @@ Bot Discord.js v14 prêt à déployer sur **Railway**.
   - Quand quelqu'un clique sur ce bouton, la nouvelle recrue reçoit un **MP** : *"{clicker} vous a dit bonjour sur {guild} !"*.
 - **Départ** : même mise en forme (Components V2), même image, texte long et sérieux, dans le salon des départs.
 - **Vocal support permanent** : le bot rejoint un salon vocal dédié ("attente support") au démarrage et **reste connecté en permanence** — il se reconnecte tout seul en cas de coupure ou de déconnexion.
+- **Annonce TTS** : à chaque connexion, le bot envoie un message **TTS** (lu à voix haute) dans un salon texte dédié, pour signaler que le support est en ligne. Texte modifiable dans `config.js` → `TTS_MESSAGE`.
 - **Statut "En direct"** : le bot affiche une activité de type **Streaming** avec comme texte `🔗discord.gg/bordeauxrp`.
   - ⚠️ **Limitation Discord** : le badge violet "En direct" ne s'affiche vraiment que si le lien associé pointe vers **twitch.tv** ou **youtube.com**. Avec un lien `discord.gg`, Discord peut retomber sur un statut classique. Renseigne un vrai lien Twitch/YouTube dans `STREAM_URL` (`.env`) si tu veux garantir l'affichage du badge — le texte affiché (`STATUS_TEXT`) reste `🔗discord.gg/bordeauxrp` dans tous les cas.
 
@@ -23,7 +24,7 @@ Pour changer l'image (utilisée pour l'arrivée ET le départ) : remplace `asset
 2. Onglet **Bot** → **Reset Token** → copie le token (à mettre dans `DISCORD_TOKEN`).
 3. Toujours dans l'onglet **Bot**, active l'intent privilégié :
    - **Server Members Intent** (nécessaire pour les arrivées/départs)
-4. Onglet **OAuth2 → URL Generator** : coche `bot` + `applications.commands`, permissions `Send Messages`, `Embed Links`, `Attach Files`, `Connect`, `Speak` (pour rejoindre et rester dans le vocal), puis invite le bot sur ton serveur avec le lien généré.
+4. Onglet **OAuth2 → URL Generator** : coche `bot` + `applications.commands`, permissions `Send Messages`, `Send TTS Messages`, `Embed Links`, `Attach Files`, `Connect`, `Speak` (pour rejoindre et rester dans le vocal), puis invite le bot sur ton serveur avec le lien généré.
 
 ## 3. Récupérer les IDs
 
@@ -32,6 +33,7 @@ Active le **Mode développeur** (Discord → Paramètres → Avancés), puis cli
 - sur le salon des arrivées → Copier l'ID → `ARRIVAL_CHANNEL_ID`
 - sur le salon des départs → Copier l'ID → `DEPARTURE_CHANNEL_ID`
 - sur le salon **vocal** d'attente support → Copier l'ID → `SUPPORT_VOICE_CHANNEL_ID`
+- sur le salon **texte** où envoyer l'annonce TTS → Copier l'ID → `TTS_CHANNEL_ID`
 
 ## 4. Déployer sur Railway
 
