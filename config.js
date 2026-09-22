@@ -45,13 +45,13 @@ module.exports = {
   ARRIVAL_MESSAGE:
     '## <:Blue_fleche:1551746443713318942> Bienvenue au sein du GIGN, {user}.\n\n' +
     '> Votre arrivée vient d\'être enregistrée par nos services. Le GIGN est une unité d\'élite exigeante : ' +
-    '> la discipline, la rigueur et l\'esprit de corps en sont les fondements. Chaque nouvelle recrue est ' +
-    '> accueillie avec la même attention et devra en retour se montrer digne des valeurs de l\'unité.\n\n' +
+    ' la discipline, la rigueur et l\'esprit de corps en sont les fondements. Chaque nouvelle recrue est ' +
+    ' accueillie avec la même attention et devra en retour se montrer digne des valeurs de l\'unité.\n\n' +
     '**Avant votre prise de fonction, merci de :**\n' +
     '<:Fleche:1552013434877378610> Prendre connaissance du règlement intérieur du serveur ;\n' +
     '<:Fleche:1552013434877378610> passez vos concours ;\n' +
     '<:Fleche:1552013434877378610> intégrer la famille qu\'est le GIGN !\n\n' +
-    '*Soyez fier de rejoindre nos rangs. "s\'engager pour la vie*.',
+    '*Soyez fier de rejoindre nos rangs. "s\'engager pour la vie"*.',
   ARRIVAL_COLOR: '#1c2938', // bleu GIGN (couleur d'accent du Container)
   ARRIVAL_FOOTER: '<:GIGN:1551745365810745374> - Gendarmerie Nationale — GIGN',
 
@@ -67,8 +67,8 @@ module.exports = {
   DEPARTURE_MESSAGE:
     '## <:Design_sans_titre__4_removebgpre:1551746757782929469> **{user}** a quitté nos rangs.\n\n' +
     '> Conformément au protocole administratif en vigueur, son dossier a été clôturé et l\'ensemble de ses ' +
-    '> accréditations révoquées avec effet immédiat. L\'accès aux ressources internes de l\'unité lui est ' +
-    '> désormais retiré.\n\n' +
+    ' accréditations révoquées avec effet immédiat. L\'accès aux ressources internes de l\'unité lui est ' +
+    ' désormais retiré.\n\n' +
     '<:Fleche:1552013434877378610> Nous saluons les services rendus au sein du GIGN durant sa présence parmi nous et lui souhaitons ' +
     '**bonne continuation dans ses projets futurs**.\n\n' +
     '*Que l\'honneur du GIGN continue de guider ceux qui restent.*',
