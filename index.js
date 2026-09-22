@@ -228,7 +228,7 @@ client.on('interactionCreate', async (interaction) => {
   const targetId = interaction.customId.split(':')[1];
 
   if (targetId === interaction.user.id) {
-    return interaction.reply({ content: ' `[+] Tu ne peux pas te dire bonjour à toi-même.` ', ephemeral: true });
+    return interaction.reply({ content: ' `[+]` Tu ne peux pas te dire bonjour à toi-même. ', ephemeral: true });
   }
 
   try {
@@ -238,7 +238,7 @@ client.on('interactionCreate', async (interaction) => {
       .replace('{guild}', interaction.guild.name);
 
     await targetMember.send(text);
-    await interaction.reply({ content: `✅ Tu as dit bonjour à **${targetMember.displayName}** !`, ephemeral: true });
+    await interaction.reply({ content: ' `[+]` Tu as dit bonjour à **${targetMember.displayName}** !', ephemeral: true });
   } catch (err) {
     console.error('Erreur lors de l\'envoi du MP "Dire bonjour" :', err);
     await interaction.reply({
