@@ -24,7 +24,7 @@ module.exports = {
   // Message envoyé avec le flag "TTS" (lu à voix haute pour les membres qui ont
   // l'option "Autoriser la lecture des messages TTS" activée dans ce salon)
   // {user} = pseudo du membre qui vient de rejoindre le vocal support
-  TTS_MESSAGE: '{user} vient de rejoindre le salon d\'attente support. Un <#&1509884272801087598> va le prendre en charge.',
+  TTS_MESSAGE: '{user} vient de rejoindre le salon d\'attente support. Un <@&1509884272801087598> va le prendre en charge.',
 
   // --- Statut du bot ----------------------------------------------------------
   // Le bot se connecte en ligne, avec une activité de type "En direct" (Streaming).
@@ -43,7 +43,7 @@ module.exports = {
   // --- Message d'arrivée (Components V2) -------------------------------------
   ARRIVAL_TITLE: '<:GIGN:1551745365810745374> - ARRIVANT',
   ARRIVAL_MESSAGE:
-    '## <:Blue_fleche:1551746443713318942> Bienvenue au sein du Groupe d\'Intervention de la Gendarmerie Nationale, {user}.\n\n' +
+    '## <:Blue_fleche:1551746443713318942> Bienvenue au sein du GIGN, {user}.\n\n' +
     'Votre arrivée vient d\'être enregistrée par nos services. Le GIGN est une unité d\'élite exigeante : ' +
     'la discipline, la rigueur et l\'esprit de corps en sont les fondements. Chaque nouvelle recrue est ' +
     'accueillie avec la même attention et devra en retour se montrer digne des valeurs de l\'unité.\n\n' +
