@@ -43,7 +43,7 @@ module.exports = {
   // --- Message d'arrivée (Components V2) -------------------------------------
   ARRIVAL_TITLE: '<:GIGN:1551745365810745374> - ARRIVANT',
   ARRIVAL_MESSAGE:
-    '<:Blue_fleche:1551746443713318942> Bienvenue au sein du **Groupe d\'Intervention de la Gendarmerie Nationale**, {user}.\n\n' +
+    '## <:Blue_fleche:1551746443713318942> Bienvenue au sein du Groupe d\'Intervention de la Gendarmerie Nationale, {user}.\n\n' +
     'Votre arrivée vient d\'être enregistrée par nos services. Le GIGN est une unité d\'élite exigeante : ' +
     'la discipline, la rigueur et l\'esprit de corps en sont les fondements. Chaque nouvelle recrue est ' +
     'accueillie avec la même attention et devra en retour se montrer digne des valeurs de l\'unité.\n\n' +
@@ -65,7 +65,7 @@ module.exports = {
   // --- Message de départ (Components V2) --------------------------------------
   DEPARTURE_TITLE: '<:GIGN:1551745365810745374> - DEPART',
   DEPARTURE_MESSAGE:
-    '<:Design_sans_titre__4_removebgpre:1551746757782929469> **{user}** a quitté nos rangs.\n\n' +
+    '## <:Design_sans_titre__4_removebgpre:1551746757782929469> **{user}** a quitté nos rangs.\n\n' +
     'Conformément au protocole administratif en vigueur, son dossier a été clôturé et l\'ensemble de ses ' +
     'accréditations révoquées avec effet immédiat. L\'accès aux ressources internes de l\'unité lui est ' +
     'désormais retiré.\n\n' +

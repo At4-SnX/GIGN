@@ -228,7 +228,7 @@ client.on('interactionCreate', async (interaction) => {
   const targetId = interaction.customId.split(':')[1];
 
   if (targetId === interaction.user.id) {
-    return interaction.reply({ content: '😄 Tu ne peux pas te dire bonjour à toi-même !', ephemeral: true });
+    return interaction.reply({ content: ' `[+] Tu ne peux pas te dire bonjour à toi-même.` ', ephemeral: true });
   }
 
   try {
