@@ -60,7 +60,7 @@ module.exports = {
   // Message envoyé en MP à la nouvelle recrue quand quelqu'un clique sur le bouton
   // {clicker} = pseudo de la personne qui clique, {guild} = nom du serveur
   HELLO_DM_MESSAGE:
-    '<:GIGN:1551745365810745374> - `{clicker} vous a dit bonjour sur **{guild}** !`\n`N\'hésitez pas à aller lui répondre pour faire connaissance !'`,
+    '<:GIGN:1551745365810745374> - `{clicker} vous a dit bonjour sur **{guild}** !`\n`N\'hésitez pas à aller lui répondre pour faire connaissance !`',
 
   // --- Message de départ (Components V2) --------------------------------------
   DEPARTURE_TITLE: '<:GIGN:1551745365810745374> - DEPART',
