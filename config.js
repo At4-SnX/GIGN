@@ -24,7 +24,7 @@ module.exports = {
   // Message envoyé avec le flag "TTS" (lu à voix haute pour les membres qui ont
   // l'option "Autoriser la lecture des messages TTS" activée dans ce salon)
   // {user} = pseudo du membre qui vient de rejoindre le vocal support
-  TTS_MESSAGE: '{user} vient de rejoindre le salon d\'attente support. Un membre du staff va le prendre en charge.',
+  TTS_MESSAGE: '{user} vient de rejoindre le salon d\'attente support. Un <#&1509884272801087598> va le prendre en charge.',
 
   // --- Statut du bot ----------------------------------------------------------
   // Le bot se connecte en ligne, avec une activité de type "En direct" (Streaming).
@@ -41,37 +41,37 @@ module.exports = {
   GIGN_IMAGE_PATH: './assets/arrivee-gign.png',
 
   // --- Message d'arrivée (Components V2) -------------------------------------
-  ARRIVAL_TITLE: '🪖 Nouvelle recrue — GIGN',
+  ARRIVAL_TITLE: '<:GIGN:1551745365810745374> - ARRIVANT',
   ARRIVAL_MESSAGE:
-    'Bienvenue au sein du **Groupe d\'Intervention de la Gendarmerie Nationale**, {user}.\n\n' +
+    '<:Blue_fleche:1551746443713318942> Bienvenue au sein du **Groupe d\'Intervention de la Gendarmerie Nationale**, {user}.\n\n' +
     'Votre arrivée vient d\'être enregistrée par nos services. Le GIGN est une unité d\'élite exigeante : ' +
     'la discipline, la rigueur et l\'esprit de corps en sont les fondements. Chaque nouvelle recrue est ' +
     'accueillie avec la même attention et devra en retour se montrer digne des valeurs de l\'unité.\n\n' +
     '**Avant votre prise de fonction, merci de :**\n' +
     '- Prendre connaissance du règlement intérieur du serveur ;\n' +
-    '- Vous présenter dans le salon prévu à cet effet ;\n' +
-    '- Patienter dans le salon vocal d\'attente : un gradé viendra procéder à votre intégration dans les meilleurs délais.\n\n' +
+    '- passez vos concours ;\n' +
+    '- intégrer la famille qu\'est le GIGN !\n\n' +
     'Soyez fier de rejoindre nos rangs. **Honneur et Patrie.**',
-  ARRIVAL_COLOR: '#0b2545', // bleu GIGN (couleur d'accent du Container)
-  ARRIVAL_FOOTER: 'Gendarmerie Nationale — GIGN RP',
+  ARRIVAL_COLOR: '#1c2938', // bleu GIGN (couleur d'accent du Container)
+  ARRIVAL_FOOTER: '<:GIGN:1551745365810745374> - Gendarmerie Nationale — GIGN',
 
   // Bouton "Dire bonjour" affiché sous le message d'arrivée
-  HELLO_BUTTON_LABEL: '👋 Dire bonjour',
+  HELLO_BUTTON_LABEL: '👋 Saluer !',
   // Message envoyé en MP à la nouvelle recrue quand quelqu'un clique sur le bouton
   // {clicker} = pseudo de la personne qui clique, {guild} = nom du serveur
   HELLO_DM_MESSAGE:
-    '👋 **{clicker}** vous a dit bonjour sur **{guild}** !\nN\'hésitez pas à aller lui répondre pour faire connaissance 😊',
+    '<:GIGN:1551745365810745374> - **{clicker}** vous a dit bonjour sur **{guild}** !\nN\'hésitez pas à aller lui répondre pour faire connaissance !',
 
   // --- Message de départ (Components V2) --------------------------------------
-  DEPARTURE_TITLE: '📤 Départ — GIGN',
+  DEPARTURE_TITLE: '<:GIGN:1551745365810745374> - DEPART',
   DEPARTURE_MESSAGE:
-    '**{user}** a quitté nos rangs.\n\n' +
+    '<:Design_sans_titre__4_removebgpre:1551746757782929469> **{user}** a quitté nos rangs.\n\n' +
     'Conformément au protocole administratif en vigueur, son dossier a été clôturé et l\'ensemble de ses ' +
     'accréditations révoquées avec effet immédiat. L\'accès aux ressources internes de l\'unité lui est ' +
     'désormais retiré.\n\n' +
     'Nous saluons les services rendus au sein du GIGN durant sa présence parmi nous et lui souhaitons ' +
     'bonne continuation dans ses projets futurs.\n\n' +
     '*Que l\'honneur du GIGN continue de guider ceux qui restent.*',
-  DEPARTURE_COLOR: '#8b0000',
-  DEPARTURE_FOOTER: 'Gendarmerie Nationale — GIGN RP',
+  DEPARTURE_COLOR: '#682828',
+  DEPARTURE_FOOTER: '<:GIGN:1551745365810745374> - Gendarmerie Nationale — GIGN',
 };
